@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         }
         UpdateAnimator();
 
-        if(isDead)
+        if (Input.GetKeyDown(KeyCode.M))
         {
             Kill();
         }
