@@ -14,15 +14,32 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
         Debug.Log("Juego Cerrado Con Exito");
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public GameObject creditsPanel;
+    public GameObject mainMenuPanel;
+ 
+    public void ShowCredits()
     {
-        
+        if (creditsPanel != null)
+        {
+            creditsPanel.SetActive(true); 
+        }
+        if (mainMenuPanel != null)
+        {
+            mainMenuPanel.SetActive(false); 
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    public void HideCredits()
     {
-        
+        if (creditsPanel != null)
+        {
+            creditsPanel.SetActive(false); 
+        }
+        if (mainMenuPanel != null)
+        {
+            mainMenuPanel.SetActive(true); 
+        }
     }
 }
