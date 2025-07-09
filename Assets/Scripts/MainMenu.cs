@@ -4,11 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    //Método para iniciar el juego o cargar una escena específica.
     public void PlayGame(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
     }
-    
+
+    // Método para salir del juego.
     public void Quitgame()
     {
         Application.Quit();
@@ -17,7 +19,8 @@ public class MainMenu : MonoBehaviour
 
     public GameObject creditsPanel;
     public GameObject mainMenuPanel;
- 
+
+    // Método para mostrar el panel de créditos y ocultar el menú principal.
     public void ShowCredits()
     {
         if (creditsPanel != null)
@@ -30,7 +33,7 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    
+    // Método para ocultar el panel de créditos y mostrar el menú principal.
     public void HideCredits()
     {
         if (creditsPanel != null)
