@@ -24,7 +24,18 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "TearsFrog")
         {
             Destroy(collision.gameObject); //destruye el objeto contra el que choque
-            IncreaseHearts(); 
+            IncreaseHearts();
+        }
+    }
+    private void OnTriggerStay2D(Collider2D other)
+      { 
+        if(other.gameObject.tag == "FireFlies")
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Destroy(other.gameObject);
+                Debug.Log("Luciérnaga Recolectada");
+            }
         }
     }
 
