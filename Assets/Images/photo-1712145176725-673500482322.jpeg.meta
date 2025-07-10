@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b5fd06444edf95d4caffeee61b116f9b
+guid: f03103682703a1f4fbefe6ffb09eab94
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8626013575521593466
-    second: LuciernagasParticulas_0
+      213: -1861910195939300180
+    second: photo-1712145176725-673500482322_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LuciernagasParticulas_0
+      name: photo-1712145176725-673500482322_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 31
-        width: 73
-        height: 69
+        x: 0
+        y: 0
+        width: 3000
+        height: 1688
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 687965b0b5e3a4880800000000000000
-      internalID: -8626013575521593466
+      spriteID: cac2c57aa8a2926e0800000000000000
+      internalID: -1861910195939300180
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LuciernagasParticulas_0: -8626013575521593466
+      photo-1712145176725-673500482322_0: -1861910195939300180
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
