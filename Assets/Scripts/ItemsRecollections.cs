@@ -25,7 +25,7 @@ public class ItemsRecollections : MonoBehaviour
 
                 if (toolbarManager != null)
                 {
-                    toolbarManager.AddQuantityToSlot(1, 2);
+                    toolbarManager.AddQuantityToSlot(1, 5);
                 }
             }
         }

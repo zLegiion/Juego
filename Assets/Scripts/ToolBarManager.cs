@@ -28,7 +28,7 @@ public class ToolbarManager : MonoBehaviour
             {
                 slotQuantities.Add(slot.slotIndex, 0);
             }
-            slot.UpdateSlotContent(null, 0); // Limpia el slot al inicio
+            slot.UpdateSlotContent(null, 0); 
         }
 
         ToolbarSlot firstSlot = GetSlotByIndex(1);

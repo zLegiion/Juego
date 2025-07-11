@@ -385,8 +385,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Development Team\n\nEmilio Sebasti\xE1n Michel C\xE1rdenas\n\nSandy Abril
-    Le\xF3n S\xE1nchez\n\nLe\xF3n Ferr\xE1n Zubikarai Saucedo\n\nRodolfo Rafael Garcia
-    Arzate"
+    Le\xF3n S\xE1nchez\n\nLe\xF3n Ferr\xE1n Zubikarai Saucedo\n\nWinona Aime\xE9
+    Reyna D\xEDaz\n\nRodolfo Rafael Garcia Arzate"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -611,8 +611,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.7111, y: -0.012107}
-  m_SizeDelta: {x: 1328.7373, y: 1440}
+  m_AnchoredPosition: {x: 166.8462, y: -0.0030441}
+  m_SizeDelta: {x: 1340.4297, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &515737412
 MonoBehaviour:
@@ -765,8 +765,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 52.05005, y: 54.398193}
-  m_SizeDelta: {x: 550.87, y: 170.294}
+  m_AnchoredPosition: {x: 24, y: 54.398193}
+  m_SizeDelta: {x: 378.6184, y: 123.0092}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &650305516
 MonoBehaviour:
