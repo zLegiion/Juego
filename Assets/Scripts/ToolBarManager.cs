@@ -1,49 +1,65 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class ToolbarManager : MonoBehaviour
 {
     [Header("Referencias de Slots")]
-    //todos los scripts ToolbarSlot en la barra de herramientas
     [SerializeField] private List<ToolbarSlot> toolbarSlots = new List<ToolbarSlot>();
 
-    private int currentSelectedSlotIndex = 1; // El índice del slot actualmente seleccionado (empieza en 1)
+    private Dictionary<int, int> slotQuantities = new Dictionary<int, int>();
 
-    private void Start()
+    [Header("Iconos de Ítems")]
+    [SerializeField] private Sprite fireflyIcon;
+
+    private int currentSelectedSlotIndex = 1;
+
+    private void Awake()
     {
-        // Asegurarse de que tenemos slots asignados
         if (toolbarSlots == null || toolbarSlots.Count == 0)
         {
             Debug.LogError("¡No hay slots de barra de herramientas asignados en el ToolbarManager! Por favor, arrástralos en el Inspector.");
             return;
         }
 
-        // Iniciar el primer slot como seleccionado
+        foreach (ToolbarSlot slot in toolbarSlots)
+        {
+            if (!slotQuantities.ContainsKey(slot.slotIndex))
+            {
+                slotQuantities.Add(slot.slotIndex, 0);
+            }
+            slot.UpdateSlotContent(null, 0); // Limpia el slot al inicio
+        }
+
+        ToolbarSlot firstSlot = GetSlotByIndex(1);
+        if (firstSlot != null && fireflyIcon != null)
+        {
+            firstSlot.UpdateSlotContent(fireflyIcon, slotQuantities[1]);
+        }
+    }
+
+    private void Start()
+    {
         SelectSlot(currentSelectedSlotIndex);
     }
 
     private void Update()
     {
-        // Detectar la entrada de las teclas numéricas (1 a 5)
         if (Input.GetKeyDown(KeyCode.Alpha1)) { SelectSlot(1); }
         else if (Input.GetKeyDown(KeyCode.Alpha2)) { SelectSlot(2); }
         else if (Input.GetKeyDown(KeyCode.Alpha3)) { SelectSlot(3); }
         else if (Input.GetKeyDown(KeyCode.Alpha4)) { SelectSlot(4); }
         else if (Input.GetKeyDown(KeyCode.Alpha5)) { SelectSlot(5); }
-        // Pueden añadir mas teclas 
     }
 
-    // Método para seleccionar un slot específico por su numero
     private void SelectSlot(int newIndex)
     {
-        // Asegurarse de que el numero esté dentro del rango válido de slots
         if (newIndex < 1 || newIndex > toolbarSlots.Count)
         {
             Debug.LogWarning($"Intento de seleccionar un slot fuera de rango: {newIndex}. Rango válido: 1 a {toolbarSlots.Count}");
             return;
         }
 
-        // Deseleccionar el slot anterior (si hay uno y es diferente al nuevo)
         if (currentSelectedSlotIndex >= 1 && currentSelectedSlotIndex <= toolbarSlots.Count)
         {
             ToolbarSlot previousSlot = GetSlotByIndex(currentSelectedSlotIndex);
@@ -53,22 +69,17 @@ public class ToolbarManager : MonoBehaviour
             }
         }
 
-        // Seleccionar el nuevo slot
         currentSelectedSlotIndex = newIndex;
         ToolbarSlot selectedSlot = GetSlotByIndex(currentSelectedSlotIndex);
         if (selectedSlot != null)
         {
             selectedSlot.SetSelected(true);
             Debug.Log($"Slot {currentSelectedSlotIndex} seleccionado.");
-            // Aquí se ´puede activar la lógica para usar el ítem en este slot --> UseItemInSlot(currentSelectedSlotIndex);
         }
     }
 
-    // Método para obtener un slot por su índice (el índice de la UI, no el de la lista)
-     
     private ToolbarSlot GetSlotByIndex(int index)
     {
-        // los slots están ordenados en la lista por su slotIndex 1, 2, 3..
         foreach (ToolbarSlot slot in toolbarSlots)
         {
             if (slot.slotIndex == index)
@@ -76,36 +87,67 @@ public class ToolbarManager : MonoBehaviour
                 return slot;
             }
         }
-        return null; 
+        return null;
     }
 
-
-    /* Este método es un ejemplo de cómo podrías actualizar el contenido de un slot desde otro script
-     
-    public void UpdateSlot(int slotIndexToUpdate, Sprite newIcon, int newQuantity)
+    public void AddQuantityToSlot(int slotIndex, int amountToAdd)
     {
-        ToolbarSlot slotToUpdate = GetSlotByIndex(slotIndexToUpdate);
-        if (slotToUpdate != null)
+        if (slotIndex < 1 || slotIndex > toolbarSlots.Count)
         {
-            slotToUpdate.UpdateSlotContent(newIcon, newQuantity);
+            Debug.LogWarning($"Intento de agregar cantidad a un slot fuera de rango: {slotIndex}.");
+            return;
         }
-        else
+
+        ToolbarSlot targetSlot = GetSlotByIndex(slotIndex);
+        if (targetSlot != null)
         {
-            Debug.LogWarning($"No se encontró el slot con índice {slotIndexToUpdate} para actualizar.");
+            if (slotQuantities.ContainsKey(slotIndex))
+            {
+                slotQuantities[slotIndex] += amountToAdd;
+            }
+            else
+            {
+                slotQuantities.Add(slotIndex, amountToAdd);
+            }
+
+            if (slotIndex == 1)
+            {
+                targetSlot.UpdateSlotContent(fireflyIcon, slotQuantities[slotIndex]);
+            }
+            else
+            {
+
+                targetSlot.UpdateSlotContent(targetSlot.ItemIconSprite, slotQuantities[slotIndex]);
+            }
+
+            Debug.Log($"Cantidad del Slot {slotIndex} actualizada a: {slotQuantities[slotIndex]}");
         }
     }
 
-     un ejemplo de cómo se puede "usar" el ítem del slot seleccionado
-     
-    public void UseSelectedItem()
+    public void SetQuantityInSlot(int slotIndex, int newQuantity)
     {
-        ToolbarSlot selectedSlot = GetSlotByIndex(currentSelectedSlotIndex);
-        if (selectedSlot != null)
+        if (slotIndex < 1 || slotIndex > toolbarSlots.Count)
         {
-            Debug.Log($"Usando el ítem del Slot: {selectedSlot.slotIndex}");
-            // Aquí iría la lógica real para usar el ítem,
-            // por ejemplo, activar una habilidad, y así.
+            Debug.LogWarning($"Intento de establecer cantidad en un slot fuera de rango: {slotIndex}.");
+            return;
+        }
+
+        ToolbarSlot targetSlot = GetSlotByIndex(slotIndex);
+        if (targetSlot != null)
+        {
+            slotQuantities[slotIndex] = newQuantity;
+
+            if (slotIndex == 1)
+            {
+                targetSlot.UpdateSlotContent(fireflyIcon, slotQuantities[slotIndex]);
+            }
+            else
+            {
+
+                targetSlot.UpdateSlotContent(targetSlot.ItemIconSprite, slotQuantities[slotIndex]);
+            }
+
+            Debug.Log($"Cantidad del Slot {slotIndex} establecida a: {slotQuantities[slotIndex]}");
         }
     }
-    */
 }
