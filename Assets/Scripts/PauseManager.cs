@@ -7,15 +7,30 @@ public class MenuPause : MonoBehaviour
     public GameObject SettingsMenu;
     public AudioSource musicSource;  // Fuente de música de fondo
     private bool isPaused = false;
-
+    void Start()
+    {
+        PauseMenu.SetActive(false);
+        SettingsMenu.SetActive(false);
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (SettingsMenu.activeSelf)
+            {
+                // Si estamos en settings, volver al menú de pausa
+                BackToPauseMenu();
+            }
+            else if (PauseMenu.activeSelf)
+            {
+                // Si ya está el menú de pausa abierto, cerrar todo
                 Resume();
+            }
             else
+            {
+                // Si no hay menús abiertos, pausar el juego
                 Pause();
+            }
         }
     }
 
@@ -41,16 +56,16 @@ public class MenuPause : MonoBehaviour
         isPaused = true;
     }
 
-    public void OpenOptionsPanel()
+    public void BackToPauseMenu()
     {
-        PauseMenu.SetActive(false);
-        SettingsMenu.SetActive(true);
+        PauseMenu.SetActive(true);
+        SettingsMenu.SetActive(false);
     }
 
     public void OpenSettingsPanel()
     {
-        PauseMenu.SetActive(true);
-        SettingsMenu.SetActive(false);
+        PauseMenu.SetActive(false);
+        SettingsMenu.SetActive(true);
     }
 
     public void QuitGame()
