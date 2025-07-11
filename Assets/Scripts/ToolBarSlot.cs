@@ -63,7 +63,7 @@ public class ToolbarSlot : MonoBehaviour
 
         if (itemQuantityText != null)
         {
-            itemQuantityText.text = (quantity > 0) ? "Luciérnagas:" + quantity.ToString() : "";
+            itemQuantityText.text = (quantity > 0) ? quantity.ToString() : "";
             itemQuantityText.enabled = (quantity > 0);
         }
     }
