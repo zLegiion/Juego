@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6503399235001826854}
   m_Layer: 0
   m_Name: Videoitem
-  m_TagString: Untagged
+  m_TagString: Fragment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,5 +147,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6fa5b96740c6d243855d72e6f076dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 4035106788890830291, guid: 3a36ec5914ddfe04797c1a73ac5c5678, type: 3}
-  videoObject: {fileID: 3479512213309651531, guid: 4540a37b98e026d4f903624f862bb8f1, type: 3}

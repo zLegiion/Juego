@@ -155,4 +155,13 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("isGrounded", isGrounded);
         anim.SetFloat("yVelocity", rb.linearVelocity.y);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Fragment"))
+        {
+            Object.FindAnyObjectByType<MemoryFragmentCounter>().AddFragment();
+        }
+    }
+
 }
