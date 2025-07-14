@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private GameObject video;
     [SerializeField] public string sceneToLoad;
+    [SerializeField] private GameObject particles;
+    [SerializeField] private AudioSource audioSource;
 
 
     [SerializeField] private GameObject creditsPanel;
@@ -19,11 +21,16 @@ public class MainMenu : MonoBehaviour
     public void Start()
     {
         video.SetActive(false);
+        particles.SetActive(true);
+        audioSource.Play();
+        video.SetActive(false);
     }
     public void PlayGame(int sceneIndex)
     {
         //SceneManager.LoadScene(sceneIndex);
         mainMenuPanel.SetActive(false);
+        particles.SetActive(false);
+        audioSource.Stop();
         video.SetActive(true);
         videoPlayer.Play();
         videoPlayer.loopPointReached += OnVideoEnd;

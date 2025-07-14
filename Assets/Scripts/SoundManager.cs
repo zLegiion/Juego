@@ -2,52 +2,34 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
-    //Variable para asignar el slider en unity
 
-    [SerializeField] Slider volumeSlider;
+    [SerializeField]private Slider volumeSlider;
+    [SerializeField] private AudioMixer audioMixer;
 
-    
+    private const string VolumePrefKey = "VolumeLevel";
+
+
     void Start()
     {
-        //Aquí, comprobamos si ya hemos guardado un valor para "musicVolume" antes.
+        float savedVolume = PlayerPrefs.GetFloat(VolumePrefKey, 0.75f);
 
-        if (!PlayerPrefs.HasKey("musicVolume"))
-        {
-            // Si no hay un valor guardado, establecemos el volumen de la música a 1 (máximo) y luego cargamos ese valor en el Slider.
-            PlayerPrefs.SetFloat("musicVolume", 1);
-            load();
-        }
+        volumeSlider.value = savedVolume;
+        SetVolume(savedVolume);
+        volumeSlider.onValueChanged.AddListener(SetVolume);
 
-        // Si ya existe un valor guardado para "musicVolume", simplemente lo cargamos en el Slider.
-        else
-        {
-            load();
-        }
     }
 
-    public void ChangeVolume()
+    public void SetVolume(float volume)
     {
-        
 
-        AudioListener.volume = volumeSlider.value;
-        Save();
-        
-        /* controla el volumen general de todos los sonidos en el juego.
-        Lo igualamos al valor actual del Slider. 
-        y lo guardamos*/
-    }
+        float dB = Mathf.Log10(Mathf.Clamp(volume, 0.0001f, 1f)) * 20f;
+        audioMixer.SetFloat("MasterVolume", dB);
 
-    //Metodos privados para cargar y guardar el volumen
-    private void load()
-    {
-        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
-    }
-
-    private void Save()
-    {
-        PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
+        PlayerPrefs.SetFloat(VolumePrefKey, volume);
+        PlayerPrefs.Save();
     }
 }
