@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
@@ -79,6 +80,8 @@ public class PlayerMovement : MonoBehaviour
             Vector3 scale = transform.localScale;
             scale.x = Mathf.Sign(horizontalInput) * Mathf.Abs(scale.x);
             transform.localScale = scale;
+
+            moveDirection = new Vector2(Mathf.Sign(horizontalInput), 0f);
         }
         UpdateAnimator();
 
@@ -162,6 +165,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Object.FindAnyObjectByType<MemoryFragmentCounter>().AddFragment();
         }
+    }
+
+    private Vector2 moveDirection = Vector2.right;
+    public Vector2 GetFacingDirection()
+    {
+        return moveDirection;
     }
 
 }
