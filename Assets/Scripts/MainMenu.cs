@@ -1,13 +1,38 @@
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private VideoPlayer videoPlayer;
+    [SerializeField] private GameObject video;
+    [SerializeField] public string sceneToLoad;
+
+
+    [SerializeField] private GameObject creditsPanel;
+    [SerializeField] private GameObject mainMenuPanel;
+
     //Método para iniciar el juego o cargar una escena específica.
+
+    public void Start()
+    {
+        video.SetActive(false);
+    }
     public void PlayGame(int sceneIndex)
     {
-        SceneManager.LoadScene(sceneIndex);
+        //SceneManager.LoadScene(sceneIndex);
+        mainMenuPanel.SetActive(false);
+        video.SetActive(true);
+        videoPlayer.Play();
+        videoPlayer.loopPointReached += OnVideoEnd;
+
+    }
+
+    void OnVideoEnd(VideoPlayer vp)
+    {
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     // Método para salir del juego.
@@ -17,8 +42,7 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Juego Cerrado Con Exito");
     }
 
-    public GameObject creditsPanel;
-    public GameObject mainMenuPanel;
+    
 
     // Método para mostrar el panel de créditos y ocultar el menú principal.
     public void ShowCredits()
