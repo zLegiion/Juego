@@ -18,7 +18,7 @@ public class ToolbarManager : MonoBehaviour
     {
         if (toolbarSlots == null || toolbarSlots.Count == 0)
         {
-            Debug.LogError("¡No hay slots de barra de herramientas asignados en el ToolbarManager! Por favor, arrástralos en el Inspector.");
+            Debug.LogError("¡No hay slots de barra de herramientas asignados!");
             return;
         }
 
@@ -28,7 +28,7 @@ public class ToolbarManager : MonoBehaviour
             {
                 slotQuantities.Add(slot.slotIndex, 0);
             }
-            slot.UpdateSlotContent(null, 0); 
+            slot.UpdateSlotContent(null, 0);
         }
 
         ToolbarSlot firstSlot = GetSlotByIndex(1);
@@ -56,7 +56,7 @@ public class ToolbarManager : MonoBehaviour
     {
         if (newIndex < 1 || newIndex > toolbarSlots.Count)
         {
-            Debug.LogWarning($"Intento de seleccionar un slot fuera de rango: {newIndex}. Rango válido: 1 a {toolbarSlots.Count}");
+            Debug.LogWarning($"Slot fuera de rango: {newIndex}.");
             return;
         }
 
@@ -78,76 +78,98 @@ public class ToolbarManager : MonoBehaviour
         }
     }
 
-    private ToolbarSlot GetSlotByIndex(int index)
-    {
-        foreach (ToolbarSlot slot in toolbarSlots)
-        {
-            if (slot.slotIndex == index)
-            {
-                return slot;
-            }
-        }
-        return null;
-    }
-
     public void AddQuantityToSlot(int slotIndex, int amountToAdd)
     {
-        if (slotIndex < 1 || slotIndex > toolbarSlots.Count)
+        if (!slotQuantities.ContainsKey(slotIndex))
         {
-            Debug.LogWarning($"Intento de agregar cantidad a un slot fuera de rango: {slotIndex}.");
+            Debug.LogWarning($"Slot {slotIndex} no existe.");
             return;
         }
 
+        slotQuantities[slotIndex] += amountToAdd;
         ToolbarSlot targetSlot = GetSlotByIndex(slotIndex);
         if (targetSlot != null)
         {
-            if (slotQuantities.ContainsKey(slotIndex))
-            {
-                slotQuantities[slotIndex] += amountToAdd;
-            }
-            else
-            {
-                slotQuantities.Add(slotIndex, amountToAdd);
-            }
-
-            if (slotIndex == 1)
-            {
-                targetSlot.UpdateSlotContent(fireflyIcon, slotQuantities[slotIndex]);
-            }
-            else
-            {
-
-                targetSlot.UpdateSlotContent(targetSlot.ItemIconSprite, slotQuantities[slotIndex]);
-            }
-
-            Debug.Log($"Cantidad del Slot {slotIndex} actualizada a: {slotQuantities[slotIndex]}");
+            Sprite iconToUse = (slotIndex == 1) ? fireflyIcon : targetSlot.ItemIconSprite;
+            targetSlot.UpdateSlotContent(iconToUse, slotQuantities[slotIndex]);
         }
+        else
+        {
+            Debug.LogWarning($"No se encontró ToolbarSlot visual para {slotIndex}.");
+        }
+
+        Debug.Log($"Cantidad del Slot {slotIndex} actualizada a: {slotQuantities[slotIndex]}");
+    }
+
+    public bool RemoveQuantityFromSlot(int slotIndex, int amountToRemove)
+    {
+        if (!slotQuantities.ContainsKey(slotIndex))
+        {
+            Debug.LogWarning($"Slot {slotIndex} no existe.");
+            return false;
+        }
+
+        if (slotQuantities[slotIndex] >= amountToRemove)
+        {
+            slotQuantities[slotIndex] -= amountToRemove;
+            ToolbarSlot targetSlot = GetSlotByIndex(slotIndex);
+            if (targetSlot != null)
+            {
+                Sprite iconToUse = (slotIndex == 1) ? fireflyIcon : targetSlot.ItemIconSprite;
+                targetSlot.UpdateSlotContent(iconToUse, slotQuantities[slotIndex]);
+            }
+            else
+            {
+                Debug.LogWarning($"No se encontró ToolbarSlot visual para {slotIndex}.");
+            }
+            Debug.Log($"Removidas {amountToRemove} del Slot {slotIndex}. Cantidad actual: {slotQuantities[slotIndex]}");
+            return true;
+        }
+        else
+        {
+            Debug.LogWarning($"No hay suficientes ítems en el Slot {slotIndex}.");
+            return false;
+        }
+    }
+
+    public int GetQuantityInSlot(int slotIndex)
+    {
+        if (slotQuantities.ContainsKey(slotIndex))
+        {
+            return slotQuantities[slotIndex];
+        }
+        Debug.LogWarning($"Slot {slotIndex} no existe. Retornando 0.");
+        return 0;
     }
 
     public void SetQuantityInSlot(int slotIndex, int newQuantity)
     {
-        if (slotIndex < 1 || slotIndex > toolbarSlots.Count)
+        if (!slotQuantities.ContainsKey(slotIndex))
         {
-            Debug.LogWarning($"Intento de establecer cantidad en un slot fuera de rango: {slotIndex}.");
+            Debug.LogWarning($"Slot {slotIndex} no existe.");
             return;
         }
 
+        slotQuantities[slotIndex] = newQuantity;
         ToolbarSlot targetSlot = GetSlotByIndex(slotIndex);
         if (targetSlot != null)
         {
-            slotQuantities[slotIndex] = newQuantity;
-
-            if (slotIndex == 1)
-            {
-                targetSlot.UpdateSlotContent(fireflyIcon, slotQuantities[slotIndex]);
-            }
-            else
-            {
-
-                targetSlot.UpdateSlotContent(targetSlot.ItemIconSprite, slotQuantities[slotIndex]);
-            }
-
-            Debug.Log($"Cantidad del Slot {slotIndex} establecida a: {slotQuantities[slotIndex]}");
+            Sprite iconToUse = (slotIndex == 1) ? fireflyIcon : targetSlot.ItemIconSprite;
+            targetSlot.UpdateSlotContent(iconToUse, slotQuantities[slotIndex]);
         }
+        else
+        {
+            Debug.LogWarning($"No se encontró ToolbarSlot visual para {slotIndex}.");
+        }
+        Debug.Log($"Cantidad del Slot {slotIndex} establecida a: {slotQuantities[slotIndex]}");
+    }
+
+    private ToolbarSlot GetSlotByIndex(int index)
+    {
+        if (index >= 1 && index <= toolbarSlots.Count)
+        {
+            return toolbarSlots.FirstOrDefault(s => s.slotIndex == index);
+        }
+        return null;
     }
 }

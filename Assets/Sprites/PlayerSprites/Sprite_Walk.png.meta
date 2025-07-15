@@ -17,6 +17,15 @@ TextureImporter:
   - first:
       213: 5844478313165512404
     second: Sprite_Walk_4
+  - first:
+      213: 4988781516377659845
+    second: Sprite_Walk_5
+  - first:
+      213: -4809034466407573690
+    second: Sprite_Walk_6
+  - first:
+      213: -7017904160228993852
+    second: Sprite_Walk_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,10 +124,10 @@ TextureImporter:
       name: Sprite_Walk_0
       rect:
         serializedVersion: 2
-        x: 54
+        x: 35
         y: 20
-        width: 20
-        height: 87
+        width: 52
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,10 +146,10 @@ TextureImporter:
       name: Sprite_Walk_1
       rect:
         serializedVersion: 2
-        x: 182
-        y: 20
-        width: 23
-        height: 87
+        x: 158
+        y: 18
+        width: 57
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,10 +168,10 @@ TextureImporter:
       name: Sprite_Walk_2
       rect:
         serializedVersion: 2
-        x: 310
-        y: 20
-        width: 21
-        height: 87
+        x: 295
+        y: 19
+        width: 48
+        height: 91
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +190,10 @@ TextureImporter:
       name: Sprite_Walk_3
       rect:
         serializedVersion: 2
-        x: 437
-        y: 20
-        width: 22
-        height: 87
+        x: 432
+        y: 19
+        width: 39
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +212,10 @@ TextureImporter:
       name: Sprite_Walk_4
       rect:
         serializedVersion: 2
-        x: 566
+        x: 547
         y: 20
-        width: 23
-        height: 87
+        width: 52
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,6 +226,72 @@ TextureImporter:
       bones: []
       spriteID: 4de54b97f02cb1150800000000000000
       internalID: 5844478313165512404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 18
+        width: 57
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c999b18b56bb3540800000000000000
+      internalID: 4988781516377659845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Walk_6
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 19
+        width: 48
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6479a25d1a0e24db0800000000000000
+      internalID: -4809034466407573690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Walk_7
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 19
+        width: 39
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c490d549556b9e90800000000000000
+      internalID: -7017904160228993852
       vertices: []
       indices: 
       edges: []
@@ -234,12 +309,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Sprite_Walk_0: 3509389234846765437
-      Sprite_Walk_1: 8397765337353436373
-      Sprite_Walk_2: 5689950254667215367
-      Sprite_Walk_3: -7818498035167482668
-      Sprite_Walk_4: 5844478313165512404
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
