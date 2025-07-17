@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: aa437256250d6c14293a4c0cae7f24d0
+guid: 75bd0d8f2f9853644ba1443c27f51388
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7494436232033235922
-    second: Volumen_0
+      213: -6707244843915162941
+    second: Rama_Lia_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Volumen_0
+      name: Rama_Lia_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 3
-        width: 20
-        height: 21
+        x: 48
+        y: 58
+        width: 35
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e2c87d544f96ef790800000000000000
-      internalID: -7494436232033235922
+      spriteID: 3cacdd8d9541be2a0800000000000000
+      internalID: -6707244843915162941
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Volumen_0: -7494436232033235922
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
