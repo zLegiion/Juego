@@ -57,11 +57,12 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            PlayerHealth playerHealth = collision.collider.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
+            PlayerFearController playerFear = collision.collider.GetComponent<PlayerFearController>();
+            if (playerFear != null)
             {
-                playerHealth.TakeDamage(contactDamage);
+                playerFear.TakeDamageFromEnemy();
             }
         }
     }
+
 }
