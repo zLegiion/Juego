@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      farol_lia_0: 6460074333608754352
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
