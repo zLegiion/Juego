@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icono de vida_0: 8367727569252560498
+      Icono de vida_1: -60466697183508565
+      Icono de vida_2: 8198988077685004473
+      Icono de vida_3: -7833298263598653410
+      Icono de vida_4: 2537430212557732905
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
