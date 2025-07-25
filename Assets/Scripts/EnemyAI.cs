@@ -13,12 +13,10 @@ public class EnemyAI : MonoBehaviour
     public int contactDamage = 25;
 
     private Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -40,7 +38,9 @@ public class EnemyAI : MonoBehaviour
             Flip();
         }
 
-        spriteRenderer.flipX = !movingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x = movingRight ? Mathf.Abs(localScale.x) : -Mathf.Abs(localScale.x);
+        transform.localScale = localScale;
     }
 
     void Flip()
