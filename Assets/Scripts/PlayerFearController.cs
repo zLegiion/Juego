@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class PlayerFearController : MonoBehaviour
 {
@@ -7,8 +7,9 @@ public class PlayerFearController : MonoBehaviour
     public float baseMaxFear = 150f;
     [SerializeField] private float currentFear;
 
-    [Header("UI del Miedo")]
-    public Slider fearSlider;
+    [Header("UI del Miedo (Corazones)")]
+    public List<FearHeartUI> fearHearts;
+    public int numberOfHearts = 5;
 
     [Header("Aumento de Miedo")]
     public float darkFearIncreaseRate = 1f;
@@ -18,8 +19,8 @@ public class PlayerFearController : MonoBehaviour
     public float safeZoneFearDecreaseRate = 10f;
 
     [Header("Capacidad Máxima Dinámica")]
-    public float maxFearReductionInterval = 180f; // 3 minutos
-    public float maxFearReductionPercentage = 0.10f; // 10%
+    public float maxFearReductionInterval = 180f;
+    public float maxFearReductionPercentage = 0.10f;
     public float lanternUseToResetMaxFearTime = 10f;
 
     private float currentMaxFear;
@@ -34,6 +35,11 @@ public class PlayerFearController : MonoBehaviour
         currentMaxFear = baseMaxFear;
         currentFear = 0f;
         maxFearReductionTimer = maxFearReductionInterval;
+
+        if (fearHearts == null || fearHearts.Count == 0)
+        {
+            Debug.LogError("PlayerFearController: No hay objetos de corazón asignados en la lista 'fearHearts'.");
+        }
     }
 
     private void Update()
@@ -137,10 +143,21 @@ public class PlayerFearController : MonoBehaviour
 
     private void UpdateFearUI()
     {
-        if (fearSlider != null)
+        float fearPerHeart = currentMaxFear / numberOfHearts;
+
+        for (int i = 0; i < numberOfHearts; i++)
         {
-            fearSlider.maxValue = currentMaxFear;
-            fearSlider.value = currentFear;
+            if (i < fearHearts.Count)
+            {
+                float fearThresholdForThisHeart = fearPerHeart * (i + 1);
+                float fearThresholdForPreviousHeart = fearPerHeart * i;
+
+                float fearInThisHeart = currentFear - fearThresholdForPreviousHeart;
+
+                float fillPercentage = Mathf.Clamp01(fearInThisHeart / fearPerHeart);
+
+                fearHearts[i].UpdateHeart(fillPercentage);
+            }
         }
     }
 
