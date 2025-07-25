@@ -6,9 +6,9 @@ public class EnemyAI : MonoBehaviour
     private float boostedSpeed = 1.25f;
     private bool movingRight = true;
 
-    public Transform groundCheck;
     public LayerMask wallLayer;
     public float wallCheckDistance = 0.1f;
+    public float rayOriginOffset = 0.5f;
 
     public int contactDamage = 25;
 
@@ -28,17 +28,18 @@ public class EnemyAI : MonoBehaviour
 
     void Patrol()
     {
-        Vector2 direction = movingRight ? Vector2.right : Vector2.left;
-        rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
+        Vector2 moveDirection = movingRight ? Vector2.right : Vector2.left;
+        rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, rb.linearVelocity.y);
 
-        // Detección de paredes usando Raycast
-        RaycastHit2D wallHit = Physics2D.Raycast(groundCheck.position, direction, wallCheckDistance, wallLayer);
+        Vector2 raycastOrigin = (Vector2)transform.position + moveDirection * rayOriginOffset;
+
+        RaycastHit2D wallHit = Physics2D.Raycast(raycastOrigin, moveDirection, wallCheckDistance, wallLayer);
+
         if (wallHit.collider != null)
         {
             Flip();
         }
 
-        // Voltear sprite
         spriteRenderer.flipX = !movingRight;
     }
 
@@ -49,7 +50,6 @@ public class EnemyAI : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        // Al recibir daño, aumenta velocidad
         moveSpeed = boostedSpeed;
     }
 
@@ -64,5 +64,4 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
-
 }
