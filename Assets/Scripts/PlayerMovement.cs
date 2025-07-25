@@ -19,25 +19,24 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Detection")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.1f;
-    [SerializeField] private LayerMask whatIsGround;            
+    [SerializeField] private LayerMask whatIsGround;
 
-    // Private references
     private Rigidbody2D rb;
     private Animator anim;
     private CapsuleCollider2D coll;
 
-    // State variables
     private float horizontalInput;
     private bool isRunning;
     private bool isCrouching;
     private bool isGrounded;
 
-    // Collider data (for crouch resize)
     private Vector2 originalColliderSize;
     private Vector2 originalColliderOffset;
 
     private Vector2 respawnPoint;
     public bool isDead = false;
+
+    private Vector2 moveDirection = Vector2.right; // Asegurarse de que esté inicializado
 
     private void Awake()
     {
@@ -51,30 +50,30 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        respawnPoint = transform.position;   // first point spawn
+        respawnPoint = transform.position;
     }
+
     public void SetCheckpoint(Vector3 pos)
     {
         respawnPoint = pos;
+        Debug.Log("Checkpoint establecido en: " + pos);
     }
-    public void Kill() // call this when the player "dies"
+
+    public void Kill()
     {
         transform.position = respawnPoint;
-        GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
-        isDead = false;
+        rb.linearVelocity = Vector2.zero;
+        Debug.Log("Jugador respawneado en el checkpoint.");
     }
 
     private void Update()
     {
-        // Gather input every frame (independent of physics)
         horizontalInput = Input.GetAxisRaw("Horizontal");
         isRunning = Input.GetKey(KeyCode.LeftShift);
         isCrouching = Input.GetKey(KeyCode.LeftControl);
 
-        // Attempt jump (only allowed if grounded and not crouching)
         if (Input.GetButtonDown("Jump") && isGrounded && !isCrouching) Jump();
 
-        // Flip sprite based on move direction
         if (horizontalInput != 0)
         {
             Vector3 scale = transform.localScale;
@@ -84,11 +83,6 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = new Vector2(Mathf.Sign(horizontalInput), 0f);
         }
         UpdateAnimator();
-
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            Kill();
-        }
     }
 
     private void FixedUpdate()
@@ -110,13 +104,12 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearVelocity = new Vector2(horizontalInput * speed, rb.linearVelocity.y);
 
-        // Apply crouch collider resize
         HandleCrouchCollider();
     }
 
     private void Jump()
     {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f); // Reset vertical velocity first for consistent jump height
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
@@ -127,7 +120,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleCrouchCollider()
     {
-        // Reduce collider height by 50% while crouching.
         if (isCrouching)
         {
             coll.size = new Vector2(originalColliderSize.x, originalColliderSize.y * 0.5f);
@@ -135,7 +127,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            // Restore collider when standing (only if space above is clear)
             RaycastHit2D ceiling = Physics2D.Raycast(transform.position, Vector2.up, originalColliderSize.y, whatIsGround);
             if (!ceiling)
             {
@@ -144,14 +135,12 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                // Still blocked stay crouched
                 isCrouching = true;
             }
         }
     }
     private void UpdateAnimator()
     {
-        // Speed parameter drives walk/run blend tree (absolute velocity *because* flip is done via scale)
         anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
         anim.SetBool("isRunning", isRunning && !isCrouching && horizontalInput != 0);
         anim.SetBool("isCrouching", isCrouching);
@@ -167,10 +156,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private Vector2 moveDirection = Vector2.right;
     public Vector2 GetFacingDirection()
     {
         return moveDirection;
     }
-
 }

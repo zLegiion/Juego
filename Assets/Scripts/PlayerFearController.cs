@@ -30,6 +30,8 @@ public class PlayerFearController : MonoBehaviour
     private float lanternOnTimer = 0f;
     private float maxFearReductionTimer;
 
+    private bool isPlayerDeadByFear = false;
+
     private void Awake()
     {
         currentMaxFear = baseMaxFear;
@@ -38,12 +40,14 @@ public class PlayerFearController : MonoBehaviour
 
         if (fearHearts == null || fearHearts.Count == 0)
         {
-            Debug.LogError("PlayerFearController: No hay objetos de corazón asignados en la lista 'fearHearts'.");
+
         }
     }
 
     private void Update()
     {
+        if (isPlayerDeadByFear) return;
+
         if (isInDarkZone && !isLanternOn)
         {
             IncreaseFear(darkFearIncreaseRate * Time.deltaTime);
@@ -77,6 +81,8 @@ public class PlayerFearController : MonoBehaviour
 
     public void IncreaseFear(float amount)
     {
+        if (isPlayerDeadByFear) return;
+
         currentFear += amount;
         currentFear = Mathf.Clamp(currentFear, 0, currentMaxFear);
         Debug.Log("Miedo aumentado. Miedo actual: " + currentFear + "/" + currentMaxFear);
@@ -84,12 +90,16 @@ public class PlayerFearController : MonoBehaviour
 
     public void TakeDamageFromEnemy()
     {
+        if (isPlayerDeadByFear) return;
+
         IncreaseFear(damageFearIncreaseAmount);
         Debug.Log("¡Recibiste daño! Miedo aumentado en " + damageFearIncreaseAmount);
     }
 
     public void DecreaseFear(float amount)
     {
+        if (isPlayerDeadByFear) return;
+
         currentFear -= amount;
         currentFear = Mathf.Clamp(currentFear, 0, currentMaxFear);
         Debug.Log("Miedo disminuido. Miedo actual: " + currentFear + "/" + currentMaxFear);
@@ -127,7 +137,7 @@ public class PlayerFearController : MonoBehaviour
 
         if (currentFear > currentMaxFear)
         {
-            currentFear = currentMaxFear;
+            currentFear = currentMaxFear; // Corrección para la advertencia CS1717
         }
     }
 
@@ -163,10 +173,28 @@ public class PlayerFearController : MonoBehaviour
 
     private void CheckFearConsequences()
     {
-        if (currentFear >= currentMaxFear)
+        if (currentFear >= currentMaxFear && !isPlayerDeadByFear)
         {
+            isPlayerDeadByFear = true;
             Debug.LogWarning("¡El miedo ha llegado al máximo! El jugador ha tenido un ataque de pánico");
-            this.enabled = false;
+
+            if (DeathManager.Instance != null)
+            {
+                DeathManager.Instance.PlayerDied();
+            }
+            else
+            {
+                Debug.Log("Moriste por miedo. GameManager no encontrado.");
+            }
         }
+    }
+
+    public void ResetFear()
+    {
+        currentFear = 0f;
+        currentMaxFear = baseMaxFear;
+        isPlayerDeadByFear = false;
+        UpdateFearUI();
+        Debug.Log("Miedo restablecido y jugador listo para continuar.");
     }
 }
