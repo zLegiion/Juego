@@ -1,31 +1,22 @@
 fileFormatVersion: 2
-guid: da63e3763e62874478d910bca52887a9
+guid: 80ace51aa6ac3a843ba64611947fcd50
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7743783570552355323
-    second: Sprite-0002_camianr-arma_2_0
+      213: 8147250195080555870
+    second: Sprite_AttackNeddleBlade_0
   - first:
-      213: -871358656217675526
-    second: Sprite-0002_camianr-arma_2_1
+      213: 5680899727046238989
+    second: Sprite_AttackNeddleBlade_1
   - first:
-      213: 5009324533893463136
-    second: Sprite-0002_camianr-arma_2_2
+      213: 6679071011142150160
+    second: Sprite_AttackNeddleBlade_2
   - first:
-      213: -8421630440330012436
-    second: Sprite-0002_camianr-arma_2_3
+      213: 7202872529098956006
+    second: Sprite_AttackNeddleBlade_3
   - first:
-      213: -3955971357644030042
-    second: Sprite-0002_camianr-arma_2_4
-  - first:
-      213: -7748552639407812655
-    second: Sprite-0002_camianr-arma_2_5
-  - first:
-      213: -5756238114151308577
-    second: Sprite-0002_camianr-arma_2_6
-  - first:
-      213: 5111525607952315552
-    second: Sprite-0002_camianr-arma_2_7
+      213: -1919609307337905780
+    second: Sprite_AttackNeddleBlade_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -117,74 +108,61 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_0
+      name: Sprite_AttackNeddleBlade_0
       rect:
         serializedVersion: 2
-        x: 45
+        x: 22
+        y: 16
+        width: 55
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5d220ee2e8d01170800000000000000
+      internalID: 8147250195080555870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_AttackNeddleBlade_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 16
+        width: 55
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d03643bf33c96de40800000000000000
+      internalID: 5680899727046238989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_AttackNeddleBlade_2
+      rect:
+        serializedVersion: 2
+        x: 294
         y: 20
-        width: 42
-        height: 92
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bf9774c0122777b60800000000000000
-      internalID: 7743783570552355323
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_1
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 18
-        width: 47
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af80f283bef48e3f0800000000000000
-      internalID: -871358656217675526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_2
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 19
         width: 39
-        height: 91
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,42 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06c7e5f7f12b48540800000000000000
-      internalID: 5009324533893463136
+      spriteID: 018acb882b3d0bc50800000000000000
+      internalID: 6679071011142150160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_3
+      name: Sprite_AttackNeddleBlade_3
       rect:
         serializedVersion: 2
-        x: 432
-        y: 19
-        width: 46
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ce85386fbbb502b80800000000000000
-      internalID: -8421630440330012436
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_4
-      rect:
-        serializedVersion: 2
-        x: 557
+        x: 426
         y: 20
-        width: 42
-        height: 92
+        width: 72
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6aff10682019919c0800000000000000
-      internalID: -3955971357644030042
+      spriteID: 6ecdc5b176eb5f360800000000000000
+      internalID: 7202872529098956006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_5
+      name: Sprite_AttackNeddleBlade_4
       rect:
         serializedVersion: 2
-        x: 680
-        y: 18
-        width: 47
-        height: 93
+        x: 560
+        y: 20
+        width: 66
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,52 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1df8ea49d6c977490800000000000000
-      internalID: -7748552639407812655
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_6
-      rect:
-        serializedVersion: 2
-        x: 816
-        y: 19
-        width: 39
-        height: 91
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fd2627bdeebbd10b0800000000000000
-      internalID: -5756238114151308577
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_7
-      rect:
-        serializedVersion: 2
-        x: 944
-        y: 19
-        width: 46
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0a47f4a5579cfe640800000000000000
-      internalID: 5111525607952315552
+      spriteID: c892798618d2c55e0800000000000000
+      internalID: -1919609307337905780
       vertices: []
       indices: 
       edges: []
@@ -322,15 +234,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Sprite-0002_camianr-arma_2_0: 7743783570552355323
-      Sprite-0002_camianr-arma_2_1: -871358656217675526
-      Sprite-0002_camianr-arma_2_2: 5009324533893463136
-      Sprite-0002_camianr-arma_2_3: -8421630440330012436
-      Sprite-0002_camianr-arma_2_4: -3955971357644030042
-      Sprite-0002_camianr-arma_2_5: -7748552639407812655
-      Sprite-0002_camianr-arma_2_6: -5756238114151308577
-      Sprite-0002_camianr-arma_2_7: 5111525607952315552
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

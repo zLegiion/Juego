@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: da63e3763e62874478d910bca52887a9
+guid: 5508f7ad1c08f3f48bed0bebc109f79f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7743783570552355323
-    second: Sprite-0002_camianr-arma_2_0
+      213: 8723573468427072891
+    second: Sprite_WalkNeddleBlade_0
   - first:
-      213: -871358656217675526
-    second: Sprite-0002_camianr-arma_2_1
+      213: 2001524951950144224
+    second: Sprite_WalkNeddleBlade_1
   - first:
-      213: 5009324533893463136
-    second: Sprite-0002_camianr-arma_2_2
+      213: 4015757901620498828
+    second: Sprite_WalkNeddleBlade_2
   - first:
-      213: -8421630440330012436
-    second: Sprite-0002_camianr-arma_2_3
+      213: 721695074626970496
+    second: Sprite_WalkNeddleBlade_3
   - first:
-      213: -3955971357644030042
-    second: Sprite-0002_camianr-arma_2_4
+      213: 2516519842819146246
+    second: Sprite_WalkNeddleBlade_4
   - first:
-      213: -7748552639407812655
-    second: Sprite-0002_camianr-arma_2_5
+      213: -3498577467000057555
+    second: Sprite_WalkNeddleBlade_5
   - first:
-      213: -5756238114151308577
-    second: Sprite-0002_camianr-arma_2_6
+      213: -4147712658465100883
+    second: Sprite_WalkNeddleBlade_6
   - first:
-      213: 5111525607952315552
-    second: Sprite-0002_camianr-arma_2_7
+      213: -4276569770981117737
+    second: Sprite_WalkNeddleBlade_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -117,24 +117,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_0
+      name: Sprite_WalkNeddleBlade_0
       rect:
         serializedVersion: 2
         x: 45
@@ -149,14 +136,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf9774c0122777b60800000000000000
-      internalID: 7743783570552355323
+      spriteID: b753e9d99db501970800000000000000
+      internalID: 8723573468427072891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_1
+      name: Sprite_WalkNeddleBlade_1
       rect:
         serializedVersion: 2
         x: 168
@@ -171,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af80f283bef48e3f0800000000000000
-      internalID: -871358656217675526
+      spriteID: 0e2b11ad658d6cb10800000000000000
+      internalID: 2001524951950144224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_2
+      name: Sprite_WalkNeddleBlade_2
       rect:
         serializedVersion: 2
         x: 304
@@ -193,14 +180,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06c7e5f7f12b48540800000000000000
-      internalID: 5009324533893463136
+      spriteID: c81de0ef886dab730800000000000000
+      internalID: 4015757901620498828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_3
+      name: Sprite_WalkNeddleBlade_3
       rect:
         serializedVersion: 2
         x: 432
@@ -215,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ce85386fbbb502b80800000000000000
-      internalID: -8421630440330012436
+      spriteID: 0832a4fb8d9f30a00800000000000000
+      internalID: 721695074626970496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_4
+      name: Sprite_WalkNeddleBlade_4
       rect:
         serializedVersion: 2
         x: 557
@@ -237,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6aff10682019919c0800000000000000
-      internalID: -3955971357644030042
+      spriteID: 6020575c6797ce220800000000000000
+      internalID: 2516519842819146246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_5
+      name: Sprite_WalkNeddleBlade_5
       rect:
         serializedVersion: 2
         x: 680
@@ -259,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1df8ea49d6c977490800000000000000
-      internalID: -7748552639407812655
+      spriteID: d21964c745e827fc0800000000000000
+      internalID: -3498577467000057555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_6
+      name: Sprite_WalkNeddleBlade_6
       rect:
         serializedVersion: 2
         x: 816
@@ -281,14 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd2627bdeebbd10b0800000000000000
-      internalID: -5756238114151308577
+      spriteID: dabebc9005d5076c0800000000000000
+      internalID: -4147712658465100883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0002_camianr-arma_2_7
+      name: Sprite_WalkNeddleBlade_7
       rect:
         serializedVersion: 2
         x: 944
@@ -303,8 +290,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a47f4a5579cfe640800000000000000
-      internalID: 5111525607952315552
+      spriteID: 7d03f77937296a4c0800000000000000
+      internalID: -4276569770981117737
       vertices: []
       indices: 
       edges: []
@@ -322,15 +309,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Sprite-0002_camianr-arma_2_0: 7743783570552355323
-      Sprite-0002_camianr-arma_2_1: -871358656217675526
-      Sprite-0002_camianr-arma_2_2: 5009324533893463136
-      Sprite-0002_camianr-arma_2_3: -8421630440330012436
-      Sprite-0002_camianr-arma_2_4: -3955971357644030042
-      Sprite-0002_camianr-arma_2_5: -7748552639407812655
-      Sprite-0002_camianr-arma_2_6: -5756238114151308577
-      Sprite-0002_camianr-arma_2_7: 5111525607952315552
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
