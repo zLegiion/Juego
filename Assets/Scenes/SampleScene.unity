@@ -4568,6 +4568,14 @@ PrefabInstance:
       propertyPath: wallCheckDistance
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2995285029681307475, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: enemyDrop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070511474340535721, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: percentProbability
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7894914171968829413, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -4884,6 +4892,14 @@ PrefabInstance:
       propertyPath: wallCheckDistance
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2995285029681307475, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: enemyDrop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070511474340535721, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: percentProbability
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7894914171968829413, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -4974,6 +4990,14 @@ PrefabInstance:
     - target: {fileID: 74586836838331624, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995285029681307475, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: enemyDrop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070511474340535721, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: percentProbability
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7894914171968829413, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_FlipX
@@ -7774,6 +7798,14 @@ PrefabInstance:
       propertyPath: wallCheckDistance
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2995285029681307475, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: enemyDrop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070511474340535721, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: percentProbability
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7894914171968829413, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -8919,6 +8951,14 @@ PrefabInstance:
       propertyPath: wallCheckDistance
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2995285029681307475, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: enemyDrop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070511474340535721, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: percentProbability
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7894914171968829413, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -9645,6 +9685,14 @@ PrefabInstance:
       propertyPath: wallCheckDistance
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2995285029681307475, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: enemyDrop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070511474340535721, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: percentProbability
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7894914171968829413, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -9681,9 +9729,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9179744653172285300, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1247534873}
     - targetCorrespondingSourceObject: {fileID: 9179744653172285300, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1247534872}
@@ -9942,6 +9987,14 @@ PrefabInstance:
     - target: {fileID: 1774193924165941814, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: wallCheckDistance
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995285029681307475, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: enemyDrop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070511474340535721, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: percentProbability
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7894914171968829413, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_FlipX
@@ -10250,7 +10303,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -10435,6 +10488,14 @@ PrefabInstance:
       propertyPath: wallCheckDistance
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2995285029681307475, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: enemyDrop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070511474340535721, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: percentProbability
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7894914171968829413, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -10505,20 +10566,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1247534873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247534871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b50ae32eb57734149911e0d40b6e2043, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 3742601909388359308, guid: fddae3bb5ef07e04eb9fcc39cb978555, type: 3}
-  percentProbability: 1
 --- !u!1 &1262221476 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9179744653172285300, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
@@ -11887,6 +11934,14 @@ PrefabInstance:
       propertyPath: wallCheckDistance
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2995285029681307475, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: enemyDrop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070511474340535721, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: percentProbability
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7894914171968829413, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -12058,6 +12113,10 @@ PrefabInstance:
     - target: {fileID: 1774193924165941814, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: wallCheckDistance
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070511474340535721, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: percentProbability
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7894914171968829413, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_FlipX
@@ -12591,6 +12650,14 @@ PrefabInstance:
       propertyPath: wallCheckDistance
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2995285029681307475, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: enemyDrop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070511474340535721, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: percentProbability
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7894914171968829413, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -12721,6 +12788,14 @@ PrefabInstance:
     - target: {fileID: 1774193924165941814, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: wallCheckDistance
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995285029681307475, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: enemyDrop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070511474340535721, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: percentProbability
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7894914171968829413, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_FlipX
@@ -13036,6 +13111,14 @@ PrefabInstance:
     - target: {fileID: 1774193924165941814, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: wallCheckDistance
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995285029681307475, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: enemyDrop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070511474340535721, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: percentProbability
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7894914171968829413, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_FlipX
@@ -13829,6 +13912,14 @@ PrefabInstance:
     - target: {fileID: 1774193924165941814, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: wallCheckDistance
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995285029681307475, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: enemyDrop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070511474340535721, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
+      propertyPath: percentProbability
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7894914171968829413, guid: 9e0637f56d191304099814d3e763c37e, type: 3}
       propertyPath: m_FlipX
@@ -16396,6 +16487,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 465645637453753269, guid: 8d373e130b5072843906aba75a00a1a4, type: 3}
+      propertyPath: ramitaUISprite
+      value: 
+      objectReference: {fileID: -6707244843915162941, guid: 75bd0d8f2f9853644ba1443c27f51388, type: 3}
+    - target: {fileID: 465645637453753269, guid: 8d373e130b5072843906aba75a00a1a4, type: 3}
+      propertyPath: currentWeaponIconUI
+      value: 
+      objectReference: {fileID: 1951181386}
+    - target: {fileID: 465645637453753269, guid: 8d373e130b5072843906aba75a00a1a4, type: 3}
+      propertyPath: needlebladeUISprite
+      value: 
+      objectReference: {fileID: 5371258261629469052, guid: 76b04de2ba91e6644907370d7ca94ced, type: 3}
     - target: {fileID: 659420357200893535, guid: 8d373e130b5072843906aba75a00a1a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.84
