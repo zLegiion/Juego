@@ -42,7 +42,18 @@ public class PlayerCombat : MonoBehaviour
     {
         currentWeapon = newWeapon;
         Debug.Log("Arma equipada: " + currentWeapon.ToString());
-        // Aquí podrías cambiar animación o sprite del arma si lo necesitas
+
+        if (animator != null)
+        {
+            if (currentWeapon == WeaponType.Ramita)
+            {
+                animator.SetInteger("WeaponType", 0); // 0 para Ramita
+            }
+            else if (currentWeapon == WeaponType.Needleblade)
+            {
+                animator.SetInteger("WeaponType", 1); // 1 para Needleblade
+            }
+        }
     }
 
     void OnDrawGizmosSelected()

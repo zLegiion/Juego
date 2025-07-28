@@ -4,24 +4,36 @@ using System.Collections;
 public class EnemyHealth : MonoBehaviour
 {
     public int health = 30;
+    public static int enemiesDefeatedCount = 0;
 
     public void TakeDamage(int amount)
     {
         health -= amount;
-        Debug.Log($"{gameObject.name} recibió {amount} de daño. Vida restante: {health}");
+        Debug.Log($"{gameObject.name} recibi {amount} de dao. Vida restante: {health}");
 
         if (health <= 0)
         {
+            enemiesDefeatedCount++;
+            Debug.Log($"Enemigo derrotado. Total: {enemiesDefeatedCount}");
+
+            if (enemiesDefeatedCount == 1)
+            {
+                TutoSignals.Instance.ShowCassettesHint();
+            }
+
             Destroy(gameObject);
         }
     }
 
-    // Habilidad de la linterna / Ceguera
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     private bool isBlinded = false;
 
-    //inicia el sprite
+    public bool IsBlinded
+    {
+        get { return isBlinded; }
+    }
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -31,7 +43,6 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    // Ciega al enemigo
     public void Blind(float duration)
     {
         if (isBlinded) return;
@@ -41,19 +52,18 @@ public class EnemyHealth : MonoBehaviour
 
         if (spriteRenderer != null)
         {
-            spriteRenderer.color = Color.blue; // Efecto visual de ceguera
+            spriteRenderer.color = Color.blue;
         }
 
         StartCoroutine(UnblindAfterDelay(duration));
     }
 
-    // Quita la ceguera después de un tiempo
     private IEnumerator UnblindAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 
         isBlinded = false;
-        Debug.Log(gameObject.name + " ya no está cegado.");
+        Debug.Log(gameObject.name + " ya no est cegado.");
 
         if (spriteRenderer != null)
         {

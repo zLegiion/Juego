@@ -13,15 +13,29 @@ public class EnemyAI : MonoBehaviour
     public int contactDamage = 25;
 
     private Rigidbody2D rb;
+    private EnemyHealth enemyHealth;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        enemyHealth = GetComponent<EnemyHealth>();
+
+        if (enemyHealth == null)
+        {
+            Debug.LogError("EnemyAI: No se encontr el componente EnemyHealth en " + gameObject.name);
+        }
     }
 
     void Update()
     {
-        Patrol();
+        if (enemyHealth != null && !enemyHealth.IsBlinded)
+        {
+            Patrol();
+        }
+        else if (enemyHealth != null && enemyHealth.IsBlinded)
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 
     void Patrol()

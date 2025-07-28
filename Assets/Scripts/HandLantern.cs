@@ -7,7 +7,7 @@ public class HandLantern : MonoBehaviour
     public PlayerFearController playerFearController;
     public KeyCode activateKey = KeyCode.T;
     public KeyCode specialAbilityKey = KeyCode.B;
-    public float lanternDuration = 300f; // Ajustar a 300f para 5 minutos
+    public float lanternDuration = 300f;
     public int fireflySlotID = 1;
 
     public GameObject lanternLightObject;
@@ -63,7 +63,7 @@ public class HandLantern : MonoBehaviour
             currentLanternTimer -= Time.deltaTime;
             if (currentLanternTimer <= 0)
             {
-                Debug.Log("La lámpara se ha quedado sin tiempo.");
+                Debug.Log("La lmpara se ha quedado sin tiempo.");
                 SetLanternState(false);
             }
         }
@@ -79,7 +79,7 @@ public class HandLantern : MonoBehaviour
         if (isLanternOn)
         {
             SetLanternState(false);
-            Debug.Log("Lámpara de mano apagada.");
+            Debug.Log("Lmpara de mano apagada.");
         }
         else
         {
@@ -89,11 +89,11 @@ public class HandLantern : MonoBehaviour
                 {
                     toolbarManager.RemoveQuantityFromSlot(fireflySlotID, 1);
                     SetLanternState(true);
-                    Debug.Log("Lámpara de mano encendida. Luciérnaga consumida.");
+                    Debug.Log("Lmpara de mano encendida. Lucirnaga consumida.");
                 }
                 else
                 {
-                    Debug.Log("No tienes luciérnagas.");
+                    Debug.Log("No tienes lucirnagas.");
                 }
             }
             else
@@ -134,7 +134,7 @@ public class HandLantern : MonoBehaviour
     {
         if (isLanternOn)
         {
-            Debug.Log("¡Destello de lámpara activado!");
+            Debug.Log("Destello de lmpara activado!");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, 5f);
             foreach (Collider2D enemyCollider in hitEnemies)
             {
@@ -143,14 +143,14 @@ public class HandLantern : MonoBehaviour
                     EnemyHealth enemyAI = enemyCollider.GetComponent<EnemyHealth>();
                     if (enemyAI != null)
                     {
-                        enemyAI.Blind(blindDuration); 
+                        enemyAI.Blind(blindDuration);
                     }
                 }
             }
         }
         else
         {
-            Debug.Log("La lámpara debe estar encendida para usar el destello.");
+            Debug.Log("La lmpara debe estar encendida para usar el destello.");
         }
     }
 }

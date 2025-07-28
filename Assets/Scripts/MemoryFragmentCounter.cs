@@ -49,7 +49,7 @@ public class MemoryFragmentCounter : MonoBehaviour
 
     private void UpdateUI()
     {
-        fragmentText.text = $"Fragmentos de memoria recolectados: {fragmentsCollected}/{maxFragments}";
+        fragmentText.text = $"Memory Fragments collected: {fragmentsCollected}/{maxFragments}";
     }
 
     private void PlayCinematicVideo()
