@@ -5,6 +5,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public int health = 30;
     public static int enemiesDefeatedCount = 0;
+    public EnemyDrop enemyDrop;
 
     public void TakeDamage(int amount)
     {
@@ -14,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             enemiesDefeatedCount++;
+            enemyDrop.TryDrop();
             Debug.Log($"Enemigo derrotado. Total: {enemiesDefeatedCount}");
 
             if (enemiesDefeatedCount == 1)
