@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 769604518840559764}
   - component: {fileID: 2995285029681307475}
   - component: {fileID: 1774193924165941814}
-  - component: {fileID: 8990211829505267012}
+  - component: {fileID: 5070511474340535721}
   m_Layer: 6
   m_Name: Enemy2.0
   m_TagString: Enemy
@@ -178,7 +178,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
-  enemyDrop: {fileID: 8990211829505267012}
 --- !u!114 &1774193924165941814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +197,7 @@ MonoBehaviour:
   wallCheckDistance: 0.1
   rayOriginOffset: 0.5
   contactDamage: 25
---- !u!114 &8990211829505267012
+--- !u!114 &5070511474340535721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,4 +210,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 3742601909388359308, guid: fddae3bb5ef07e04eb9fcc39cb978555, type: 3}
-  percentProbability: 1
+  percentProbability: 0.3

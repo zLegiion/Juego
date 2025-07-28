@@ -4,7 +4,7 @@ using UnityEngine.Video;
 public class EnemyDrop : MonoBehaviour
 {
     [SerializeField] private GameObject itemPrefab;   
-    [Range(0, 1)] public float percentProbability = 0.08f;   
+    [Range(0, 1)] public float percentProbability = 0.03f;   
 
     private void Update()
     {
@@ -15,6 +15,14 @@ public class EnemyDrop : MonoBehaviour
         }
     }
     public void TryDrop()
+    {
+        if (Random.value <= percentProbability)
+        {
+            GameObject itemGO = Instantiate(itemPrefab, transform.position, Quaternion.identity);
+        }
+    }
+
+    private void OnDestroy()
     {
         if (Random.value <= percentProbability)
         {

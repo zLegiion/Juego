@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Needleblade_0: 5371258261629469052
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
