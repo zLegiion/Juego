@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -12,7 +13,19 @@ public class PlayerCombat : MonoBehaviour
 
     public Animator animator;
     public SpriteRenderer spriteRenderer;
-    public PlayerMovement movementController; // Asegúrate de tener este script y referencia
+    public PlayerMovement movementController;
+
+    public Image currentWeaponIconUI;
+    public Sprite ramitaUISprite;
+    public Sprite needlebladeUISprite;
+
+    private void Start()
+    {
+        if (currentWeaponIconUI != null && ramitaUISprite != null)
+        {
+            currentWeaponIconUI.sprite = ramitaUISprite;
+        }
+    }
 
     private void Update()
     {
@@ -47,11 +60,23 @@ public class PlayerCombat : MonoBehaviour
         {
             if (currentWeapon == WeaponType.Ramita)
             {
-                animator.SetInteger("WeaponType", 0); // 0 para Ramita
+                animator.SetInteger("WeaponType", 0);
             }
             else if (currentWeapon == WeaponType.Needleblade)
             {
-                animator.SetInteger("WeaponType", 1); // 1 para Needleblade
+                animator.SetInteger("WeaponType", 1);
+            }
+        }
+
+        if (currentWeaponIconUI != null)
+        {
+            if (currentWeapon == WeaponType.Ramita && ramitaUISprite != null)
+            {
+                currentWeaponIconUI.sprite = ramitaUISprite;
+            }
+            else if (currentWeapon == WeaponType.Needleblade && needlebladeUISprite != null)
+            {
+                currentWeaponIconUI.sprite = needlebladeUISprite;
             }
         }
     }
